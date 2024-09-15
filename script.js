@@ -8,7 +8,8 @@ downloadBtn.addEventListener("click", e => {
 });
 
 function fetchFile(url) {
-    fetch(url)
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    fetch(proxyUrl + url)
         .then(res => {
             if (!res.ok) throw new Error('Network response was not ok');
             return res.blob();
